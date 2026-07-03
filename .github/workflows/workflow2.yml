@@ -1,0 +1,15 @@
+name: creating new events 
+on: 
+     workflow_dispatch: 
+     push:
+     pull_request:
+     schedule:
+       - cron: "*/7 * * * *"
+jobs:
+     creatingneweventsjob: 
+          runs-on: ubuntu-latest 
+          steps: 
+             - name: Print trigger event 
+               run: echo "My trigger is ${{ github.event_name }} event" 
+
+            
