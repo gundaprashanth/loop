@@ -23,7 +23,7 @@ env:
 jobs:
     checkoutrepository:
          runs-on: ubuntu-latest
-         if: ${{ github.event_name == 'push' && startsWith(github.ref_name 'feature/')) || (github.event_name == 'pull_request' && github.base_rev == 'main' && !contains(github.event.pull_request.title, 'WIP')) }}
+         if: ${{ github.event_name == 'push' && startsWith(github.ref_name, 'feature/')) || (github.event_name == 'pull_request' && github.base_rev == 'main' && !contains(github.event.pull_request.title, 'WIP')) }}
 
          steps:
              - name: checkoutrepository 
@@ -83,5 +83,5 @@ jobs:
                if: ${{ always() }}
                run: |
                   docker rm -f flask-container || true 
-                  
+
 
