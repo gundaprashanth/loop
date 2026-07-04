@@ -1,0 +1,31 @@
+name: testing github actions features 
+on: 
+  push: 
+    branches:
+       - "develop"
+       - "feature/*"
+    paths:
+        - "app/**"
+        - "docker/**"
+        - ".github/workflows/**"
+
+  pull_request:
+      types:
+         - opened 
+         - synchronize
+         - reopened
+         - closed
+         - ready_for_review 
+
+      branches:
+          - "main"    
+jobs: 
+     creatingeventjobs:
+         runs-on: ubuntu-latest
+         steps:
+             - name: this is first step 
+               run: |  
+                  echo "workflow triggered successfully" 
+                  echo "Event Type: $GITHUB_EVENT_NAME" 
+                  echo "Branch: $GITHUB_REF_NAME"
+                  echo "Owner: $GITHUB_REPOSITORY_OWNER"
