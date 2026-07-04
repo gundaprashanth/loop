@@ -49,7 +49,7 @@ jobs:
                    password: ${{ secrets.DOCKERHUB_TOKEN }}
 
              - name: Build Docker Image 
-               uses: docker/build push action@v7 
+               uses: docker/build-push-action@v7 
                with:
                    context: ./app 
                    push: false 
