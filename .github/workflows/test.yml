@@ -36,7 +36,7 @@ jobs:
              
              - name: Display Build Information
                run: | 
-                 echo "Application: $APPLICATION_NAME"" 
+                 echo "Application: $APPLICATION_NAME"
                  echo "Repository: $GITHUB_REPOSITORY"
                  echo "Actor: $GITHUB_ACTOR"
                  echo "Branch: $GITHUB_REF_NAME"
